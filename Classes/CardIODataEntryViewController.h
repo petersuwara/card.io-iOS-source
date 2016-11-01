@@ -29,11 +29,13 @@
 @property(nonatomic, assign, readwrite) BOOL collectPostalCode;
 @property(nonatomic, assign, readwrite) BOOL restrictPostalCodeToNumericOnly;
 @property(nonatomic, assign, readwrite) BOOL collectCardholderName;
+@property(nonatomic, assign, readwrite) BOOL collectCardAlias;
 @property(nonatomic, strong, readwrite) UITextField *expiryTextField;
 @property(nonatomic, strong, readwrite) UITextField *numberTextField;
 @property(nonatomic, strong, readwrite) UITextField *cvvTextField;
 @property(nonatomic, strong, readwrite) UITextField *postalCodeTextField;
 @property(nonatomic, strong, readwrite) UITextField *cardholderNameTextField;
+@property(nonatomic, strong, readwrite) UITextField *cardAliasTextField;
 
 + (BOOL)cardExpiryIsValid:(CardIOCreditCardInfo *)info;
 

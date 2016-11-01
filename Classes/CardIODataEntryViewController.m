@@ -156,6 +156,7 @@
   self.collectPostalCode = pvc.collectPostalCode;
   self.restrictPostalCodeToNumericOnly = pvc.restrictPostalCodeToNumericOnly;
   self.collectCardholderName = pvc.collectCardholderName;
+  self.collectCardAlias = pvc.collectCardAlias;
 
   self.scrollView = [[UIScrollView alloc] initWithFrame:self.relevantViewFrame];
 
@@ -356,6 +357,33 @@
 
     [rows addObject:cardholderNameRow];
   }
+  
+  if(self.collectCardAlias) {
+    CardIOMultipleFieldTableViewCell *cardAliasRow = [[CardIOMultipleFieldTableViewCell alloc] init];
+    cardAliasRow.backgroundColor = kColorDefaultCell;
+    cardAliasRow.numberOfFields = 1;
+    cardAliasRow.hiddenLabels = YES;
+    cardAliasRow.textAlignment = [CardIOLocalizer textAlignmentForLanguageOrLocale:self.context.languageOrLocale];
+    
+    NSString *cardAliasText = @"Card Alias";//Different string IDs dont work CardIOLocalizedString(@"entry_card_alias", self.context.languageOrLocale); // Cardholder Name
+    [cardAliasRow.labels addObject:cardAliasText];
+    
+    self.cardAliasTextField = [cardAliasRow.textFields lastObject];
+    [self.visibleTextFields addObject:self.cardAliasTextField];
+    
+    //self.cardholderNameRowTextFieldDelegate = [[CardIOCardholderNameTextFieldDelegate alloc] init];
+    self.cardAliasTextField.placeholder = cardAliasText;
+    self.cardAliasTextField.delegate = self.cardholderNameRowTextFieldDelegate;
+    self.cardAliasTextField.text = self.cardInfo.cardholderName;
+    self.cardAliasTextField.keyboardType = UIKeyboardTypeDefault;
+    self.cardAliasTextField.clearButtonMode = UITextFieldViewModeNever;
+    self.cardAliasTextField.text = @"";
+    self.cardAliasTextField.textAlignment = [CardIOLocalizer textAlignmentForLanguageOrLocale:self.context.languageOrLocale];
+    self.cardAliasTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.cardAliasTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    
+    [rows addObject:cardAliasRow];
+  }
 
   CardIORowBasedTableViewSection *infoSection = [[CardIORowBasedTableViewSection alloc] init];
   infoSection.rows = rows;
@@ -459,6 +487,12 @@
                                              selector:@selector(cardholderNameDidChange:)
                                                  name:UITextFieldTextDidChangeNotification
                                                object:self.cardholderNameTextField];
+  }
+  if(self.collectCardAlias) {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(cardAliasDidChange:)
+                                                 name:UITextFieldTextDidChangeNotification
+                                               object:self.cardAliasTextField];
   }
 
   [self layoutForCurrentOrientation];
@@ -992,12 +1026,26 @@
   [self validate];
 }
 
+- (void)cardAliasDidChange:(id)sender {
+  self.cardInfo.cardAlias = self.cardAliasTextField.text;
+  
+//  if([CardIOCardAliasTextFieldDelegate isValidCardAlias:self.cardInfo.cardAlias]) {
+//    self.cardAliasTextField.textColor = [CardIOTableViewCell defaultDetailTextLabelColorForCellStyle:[CardIOTableViewCell defaultCellStyle]];
+//  } else {
+//    self.cardAliasTextField.textColor = [CardIOTableViewCell defaultDetailTextLabelColorForCellStyle:[CardIOTableViewCell defaultCellStyle]];
+//    self.cardAliasTextField.textColor = [UIColor redColor];
+//  }
+  
+  [self validate];
+}
+
 - (BOOL)validate {
   BOOL numberIsValid = !self.manualEntry || [CardIOCreditCardNumber isValidNumber:self.cardInfo.cardNumber];
   BOOL expiryIsValid = !self.expiryTextField || [[self class] cardExpiryIsValid:self.cardInfo];
   BOOL cvvIsValid = !self.cvvTextField || [CardIOCVVTextFieldDelegate isValidCVV:self.cardInfo.cvv forNumber:self.cardInfo.cardNumber];
   BOOL postalCodeIsValid = !self.postalCodeTextField || [CardIOPostalCodeTextFieldDelegate isValidPostalCode:self.cardInfo.postalCode];
   BOOL cardholderNameIsValid = !self.cardholderNameTextField || [CardIOCardholderNameTextFieldDelegate isValidCardholderName:self.cardInfo.cardholderName];
+  BOOL cardAliasIsValid = !self.cardAliasTextField || self.cardAliasTextField.text.length > 0; //[CardIOCardAliasTextFieldDelegate isValidCardAlias:self.cardInfo.cardAlias];
   BOOL isValid = numberIsValid && expiryIsValid && cvvIsValid && postalCodeIsValid && cardholderNameIsValid;
   self.navigationItem.rightBarButtonItem.enabled = isValid;
 

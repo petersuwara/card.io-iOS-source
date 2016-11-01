@@ -18,6 +18,7 @@
 "paypal_logo" = "PayPal";
 "scan_guide" = "Aseta kortti tähän.\nSe skannautuu automaattisesti.";
 
+
 "cardtype_americanexpress" = "American Express";
 "cardtype_cartaaura" = "Carta Aura";
 "cardtype_carteaurore" = "Carte Aurore";

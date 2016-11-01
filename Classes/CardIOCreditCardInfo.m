@@ -84,7 +84,8 @@
           (unsigned long)self.expiryYear,
           ([self.cvv length] ? [NSString stringWithFormat:@"; cvv: %@", self.cvv] : @""),
           ([self.postalCode length] ? [NSString stringWithFormat:@"; postal code: %@", self.postalCode] : @""),
-          ([self.cardholderName length] ? [NSString stringWithFormat:@"; cardholder name: %@", self.cardholderName] : @"")];
+          ([self.cardholderName length] ? [NSString stringWithFormat:@"; cardholder name: %@", self.cardholderName] : @""),
+          ([self.cardAlias length] ? [NSString stringWithFormat:@"; card alias: %@", self.cardAlias] : @"")];
 }
 
 - (CardIOCreditCardType)cardType {
@@ -99,6 +100,7 @@
   theCopy.cvv = self.cvv;
   theCopy.postalCode = self.postalCode;
   theCopy.cardholderName = self.cardholderName;
+  theCopy.cardAlias = self.cardAlias;
   theCopy.scanned = self.scanned;
   theCopy.cardImage = [self.cardImage copy];
   return theCopy;

@@ -191,6 +191,7 @@ static CardIOLocalizer *sFallbackLocalizer = nil;
   // Confirm that all languages are present
   
   for (NSString *lang in allLanguages) {
+    
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[[CardIOBundle sharedInstance] NSBundle] pathForResource:[NSString stringWithFormat:@"strings/%@", lang] ofType:@"strings"]];
     if ([dictionary count] == 0) {
       if(error) {

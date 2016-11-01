@@ -54,11 +54,17 @@ typedef NS_ENUM(NSInteger, CardIOCreditCardType) {
 /// @note May be nil, if cardholder name was not requested.
 @property(nonatomic, copy, readwrite) NSString *cardholderName;
 
+/// Card Alias.
+/// @note May be nil, if card alias name was not requested.
+@property(nonatomic, copy, readwrite) NSString* cardAlias;
+
 /// Was the card number scanned (as opposed to entered manually)?
 @property(nonatomic, assign, readwrite) BOOL scanned;
 
 /// The rectified card image; usually 428x270.
 @property(nonatomic, strong, readwrite) UIImage *cardImage;
+
+
 
 /// Derived from cardNumber.
 /// @note CardIOCreditInfo objects returned by either of the delegate methods

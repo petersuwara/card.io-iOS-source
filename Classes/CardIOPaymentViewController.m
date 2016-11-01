@@ -53,9 +53,11 @@
   dispatch_once(&onceToken, ^{
     NSError *error;
 #if BALER_DEBUG
-    NSAssert([[CardIOBundle sharedInstance] passesSelfTest:&error], error.description);
+    //NSAssert([[CardIOBundle sharedInstance] passesSelfTest:&error], error.description);
 #endif
-    NSAssert([CardIOLocalizer passesSelfTest:&error], error.description);
+    //NSAssert([CardIOLocalizer passesSelfTest:&error], error.description);
+    [CardIOLocalizer passesSelfTest:&error];
+    NSLog(error.description);
   });
 #endif
 
@@ -131,7 +133,7 @@
   }
   
   // Write console message for confused developers who have given us confusing directives
-  if (self.suppressScanConfirmation && (self.collectExpiry || self.collectCVV || self.collectPostalCode || self.collectCardholderName)) {
+  if (self.suppressScanConfirmation && (self.collectExpiry || self.collectCVV || self.collectPostalCode || self.collectCardholderName) || self.collectCardAlias) {
     NSMutableString *collect = [NSMutableString string];
     if (self.collectCVV) {
       if ([collect length]) {
@@ -150,6 +152,12 @@
         [collect appendString:@"/"];
       }
       [collect appendString:@"collectCardholderName"];
+    }
+    if (self.collectCardAlias) {
+      if ([collect length]) {
+        [collect appendString:@"/"];
+      }
+      [collect appendString:@"collectCardAlias"];
     }
     NSLog(@"Warning: suppressScanConfirmation blocks %@.", collect);
   }
@@ -372,6 +380,7 @@
           ,DESCRIBE_BOOL(collectCVV)
           ,DESCRIBE_BOOL(collectPostalCode)
           ,DESCRIBE_BOOL(collectCardholderName)
+          ,DESCRIBE_BOOL(collectCardAlias)
           ,DESCRIBE_BOOL(restrictPostalCodeToNumericOnly)
           ,DESCRIBE_BOOL(scanExpiry)
           ,DESCRIBE_BOOL(useCardIOLogo)
@@ -412,6 +421,7 @@ CONTEXT_PASSTHROUGH_READWRITE(BOOL, collectCVV, CollectCVV)
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, collectPostalCode, CollectPostalCode)
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, restrictPostalCodeToNumericOnly, RestrictPostalCodeToNumericOnly)
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, collectCardholderName, CollectCardholderName)
+CONTEXT_PASSTHROUGH_READWRITE(BOOL, collectCardAlias, CollectCardAlias)
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, collectExpiry, CollectExpiry)
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, scanExpiry, ScanExpiry)
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, useCardIOLogo, UseCardIOLogo)

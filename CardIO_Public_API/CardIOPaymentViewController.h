@@ -128,6 +128,9 @@
 /// Set to YES if you need to collect the cardholder name. Defaults to NO.
 @property(nonatomic, assign, readwrite) BOOL collectCardholderName;
 
+/// Set to YES if you need to collect the card alias. Defaults to NO.
+@property(nonatomic, assign, readwrite) BOOL collectCardAlias;
+
 /// Set to NO if you don't want the camera to try to scan the card expiration.
 /// Applies only if collectExpiry is also YES.
 /// Defaults to YES.
