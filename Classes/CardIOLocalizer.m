@@ -127,7 +127,8 @@ static CardIOLocalizer *sFallbackLocalizer = nil;
   
   NSArray *allLanguages = [CardIOLocalizer allLanguages];
 
-  NSDictionary *enDictionary = [NSDictionary dictionaryWithContentsOfFile:[[[CardIOBundle sharedInstance] NSBundle] pathForResource:@"strings/en" ofType:@"strings"]];
+  NSString* pathForEnStringResource = [[[CardIOBundle sharedInstance] NSBundle] pathForResource:@"strings/en" ofType:@"strings"];
+  NSDictionary *enDictionary = [NSDictionary dictionaryWithContentsOfFile:pathForEnStringResource];
   
   // First, a few tests for the en strings (the L10n team should be applying these same tests to their files)
   

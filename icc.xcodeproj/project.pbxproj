@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3A894C1DF681F8000D8CBF /* card_io_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89441DF681F8000D8CBF /* card_io_logo.png */; };
-		1D3A894D1DF681F8000D8CBF /* card_io_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89451DF681F8000D8CBF /* card_io_logo@2x.png */; };
-		1D3A894E1DF681F8000D8CBF /* card_io_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89461DF681F8000D8CBF /* card_io_logo@3x.png */; };
-		1D3A894F1DF681F8000D8CBF /* CreditCardLogos in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89471DF681F8000D8CBF /* CreditCardLogos */; };
-		1D3A89501DF681F8000D8CBF /* paypal_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89481DF681F8000D8CBF /* paypal_logo.png */; };
-		1D3A89511DF681F8000D8CBF /* paypal_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89491DF681F8000D8CBF /* paypal_logo@2x.png */; };
-		1D3A89521DF681F8000D8CBF /* paypal_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A894A1DF681F8000D8CBF /* paypal_logo@3x.png */; };
-		1D3A89531DF681F8000D8CBF /* strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A894B1DF681F8000D8CBF /* strings */; };
+		1D3A894C1DF681F8000D8CBF /* card_io_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89441DF681F8000D8CBF /* card_io_logo.png */; settings = {ASSET_TAGS = (Assets, ); }; };
+		1D3A894D1DF681F8000D8CBF /* card_io_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89451DF681F8000D8CBF /* card_io_logo@2x.png */; settings = {ASSET_TAGS = (Assets, ); }; };
+		1D3A894E1DF681F8000D8CBF /* card_io_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89461DF681F8000D8CBF /* card_io_logo@3x.png */; settings = {ASSET_TAGS = (Assets, ); }; };
+		1D3A894F1DF681F8000D8CBF /* CreditCardLogos in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89471DF681F8000D8CBF /* CreditCardLogos */; settings = {ASSET_TAGS = (Assets, ); }; };
+		1D3A89501DF681F8000D8CBF /* paypal_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89481DF681F8000D8CBF /* paypal_logo.png */; settings = {ASSET_TAGS = (Assets, ); }; };
+		1D3A89511DF681F8000D8CBF /* paypal_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A89491DF681F8000D8CBF /* paypal_logo@2x.png */; settings = {ASSET_TAGS = (Assets, ); }; };
+		1D3A89521DF681F8000D8CBF /* paypal_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A894A1DF681F8000D8CBF /* paypal_logo@3x.png */; settings = {ASSET_TAGS = (Assets, ); }; };
+		1D3A89531DF681F8000D8CBF /* strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A894B1DF681F8000D8CBF /* strings */; settings = {ASSET_TAGS = (Assets, ); }; };
 		3E0133E1198AD433009E579A /* CardIO-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 3E0133E0198AD433009E579A /* CardIO-Prefix.pch */; };
 		3E0133E4198AD6C5009E579A /* AdHocEntitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E0133E3198AD6C5009E579A /* AdHocEntitlements.plist */; };
 		3E0133E7198AD75C009E579A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0133E6198AD75C009E579A /* main.m */; };
@@ -2194,6 +2194,9 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					Assets,
+				);
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					3E9F4C4A181F07B700F33B48 = {

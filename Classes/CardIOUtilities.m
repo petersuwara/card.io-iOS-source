@@ -9,6 +9,7 @@
 #import "CardIOLocalizer.h"
 #import "CardIOMacros.h"
 #import "CardIOView.h"
+#import "CardIOBundle.h"
 
 #import "UIImage+ImageEffects.h"
 
@@ -113,11 +114,29 @@ static ScanAvailabilityStatus cachedScanAvailabilityStatus = ScanAvailabilityUnk
 #pragma mark - Preload resources for faster launch of card.io
 
 + (void)preloadCardIO {
+  NSString* bundlePath = [[[CardIOBundle sharedInstance] NSBundle] bundlePath];
+  NSLog(@"ASSETS IN BUNDLE AT : %@", bundlePath);
+  [self listAllResources: bundlePath];
   [CardIOLocalizer preload];
 }
 
 + (void)preload {
   [self preloadCardIO];
+}
+  
++ (void)listAllResources:(NSString*)directoryPath {
+  NSMutableArray *filePaths = [[NSMutableArray alloc] init];
+  NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:directoryPath];
+  
+  NSString *filePath;
+  
+  while ((filePath = [enumerator nextObject]) != nil){
+    [filePaths addObject:[directoryPath stringByAppendingPathComponent:filePath]];
+  }
+  
+  for (int i = 0; i < [filePaths count]; i++) {
+    NSLog(@"%@", filePaths[i]);
+  }
 }
 
 #pragma mark - Screen obfuscation on backgrounding

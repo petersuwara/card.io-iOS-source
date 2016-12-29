@@ -6610,11 +6610,6 @@ static uint8_t CardIOBundle_data[124787] = { // Files and corresponding data
 
 - (id)initPrivate {
   self = [super init];
-  if(self) {
-    if(![self expandBundleAndSave]) {
-      self = nil;
-    }
-  }
   return self;
 }
 
@@ -6673,14 +6668,9 @@ static uint8_t CardIOBundle_data[124787] = { // Files and corresponding data
 
 - (NSString *)bundlePath {
   // Use the caches dir, since this data can be recreated if it goes missing
-  NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-  if([cachePaths count] == 0) {
-    return nil;
-  }
-
-  NSString *cachePath = [cachePaths objectAtIndex:0];
-  NSString *bundleCachePath = [cachePath stringByAppendingPathComponent:@"CardIOBundle.bundle"];
-  return bundleCachePath;
+  NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
+  NSString *frameworkPath = [bundlePath stringByAppendingPathComponent:@"Frameworks/CardIO.framework"];
+  return frameworkPath;
 }
 
 - (BOOL)saveBundle:(NSDictionary *)expandedBundle {

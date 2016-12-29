@@ -29,6 +29,8 @@
     case CardIOCreditCardTypeDiscover:
       result = CardIOLocalizedString(@"cardtype_discover", languageOrLocale); // Discover
       break;
+    case CardIOCreditCardTypeUnionPay:
+      result = CardIOLocalizedString(@"cardtype_unionpay", languageOrLocale); // Union Pay
     default:
       result = @"";
       break;
@@ -55,12 +57,17 @@
     case CardIOCreditCardTypeDiscover:
       imageName = @"icon_discover.png";
       break;
+    case CardIOCreditCardTypeUnionPay:
+      imageName = @"icon_unionpay.png";
+      break;
     default:
       break;
   }
+  
   if ([imageName length]) {
     logo = [[CardIOBundle sharedInstance] imageNamed:[NSString stringWithFormat:@"CreditCardLogos/%@", imageName]];
   }
+  
   return logo;
 }
 

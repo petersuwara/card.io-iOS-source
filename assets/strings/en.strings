@@ -12,7 +12,7 @@
 "entry_title" = "Card";
 "entry_postal_code" = "Postal Code";
 "entry_cardholder_name" = "Cardholder Name";
-"entry_card_alias" = "Card Alias"
+"entry_card_alias" = "Card Alias";
 "expires_placeholder" = "MM/YY";
 "manual_entry" = "Enter Manually";
 "ok" = "OK";
@@ -27,6 +27,7 @@
 "cardtype_cofinoga" = "Cofinoga";
 "cardtype_delta" = "Delta";
 "cardtype_discover" = "Discover";
+"cardtype_unionpay" = "Union Pay";
 "cardtype_electron" = "Electron";
 "cardtype_jcb" = "JCB";
 "cardtype_maestro" = "Maestro";

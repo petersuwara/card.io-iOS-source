@@ -365,7 +365,7 @@
     cardAliasRow.hiddenLabels = YES;
     cardAliasRow.textAlignment = [CardIOLocalizer textAlignmentForLanguageOrLocale:self.context.languageOrLocale];
     
-    NSString *cardAliasText = @"Card Alias";//Different string IDs dont work CardIOLocalizedString(@"entry_card_alias", self.context.languageOrLocale); // Cardholder Name
+    NSString *cardAliasText = CardIOLocalizedString(@"entry_card_alias", self.context.languageOrLocale); // Card Alias
     [cardAliasRow.labels addObject:cardAliasText];
     
     self.cardAliasTextField = [cardAliasRow.textFields lastObject];

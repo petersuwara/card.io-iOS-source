@@ -26,6 +26,7 @@
 "cardtype_cofinoga" = "Cofinoga";
 "cardtype_delta" = "Delta";
 "cardtype_discover" = "Discover";
+"cardtype_unionpay" = "Union Pay";
 "cardtype_electron" = "Electron";
 "cardtype_jcb" = "JCB";
 "cardtype_maestro" = "Maestro";
