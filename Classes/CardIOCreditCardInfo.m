@@ -18,19 +18,19 @@
       result = CardIOLocalizedString(@"cardtype_americanexpress", languageOrLocale); // American Express
       break;
     case CardIOCreditCardTypeJCB:
-      result = CardIOLocalizedString(@"cardtype_jcb", languageOrLocale); // JCB
+      result = CardIOLocalizedString(@"cardtype_jcb", languageOrLocale);        // JCB
       break;
     case CardIOCreditCardTypeVisa:
-      result = CardIOLocalizedString(@"cardtype_visa", languageOrLocale); // Visa
+      result = CardIOLocalizedString(@"cardtype_visa", languageOrLocale);       // Visa
       break;
     case CardIOCreditCardTypeMastercard:
       result = CardIOLocalizedString(@"cardtype_mastercard", languageOrLocale); // MasterCard
       break;
     case CardIOCreditCardTypeDiscover:
-      result = CardIOLocalizedString(@"cardtype_discover", languageOrLocale); // Discover
+      result = CardIOLocalizedString(@"cardtype_discover", languageOrLocale);   // Discover
       break;
     case CardIOCreditCardTypeUnionPay:
-      result = CardIOLocalizedString(@"cardtype_unionpay", languageOrLocale); // Union Pay
+      result = CardIOLocalizedString(@"cardtype_unionpay", languageOrLocale);   // Union Pay
     default:
       result = @"";
       break;
