@@ -2205,6 +2205,7 @@
 					92263D6F1B83ACBB003FE678 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = B2NTP3ZB4X;
+						ProvisioningStyle = Automatic;
 					};
 					A553B6E51BE32273006DF551 = {
 						DevelopmentTeam = B2NTP3ZB4X;
@@ -2638,6 +2639,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54BF1BE2FEEC00B669FB /* CardIO_Framework_Release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B2NTP3ZB4X;
 				PRODUCT_BUNDLE_IDENTIFIER = com.verrency.cardio;
 			};
@@ -2647,7 +2649,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54BD1BE2FEEC00B669FB /* CardIO_Framework_Adhoc.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = B2NTP3ZB4X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.verrency.cardio;
 			};
 			name = AdHoc;
