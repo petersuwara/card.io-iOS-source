@@ -17,6 +17,7 @@
 "ok" = "ОК";
 "paypal_logo" = "PayPal";
 "scan_guide" = "Держите карту внутри рамки.\nОна будет считана автоматически.";
+"entry_card_alias" = "Card Alias";
 
 "cardtype_americanexpress" = "American Express";
 "cardtype_cartaaura" = "Carta Aura";

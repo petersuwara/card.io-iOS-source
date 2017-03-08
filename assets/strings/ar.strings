@@ -17,6 +17,8 @@
 "ok" = "موافق";
 "paypal_logo" = "PayPal‏";
 "scan_guide" = "امسك البطاقة هنا.\n ستمسح تلقائيا.";
+"entry_card_alias" = "Card Alias";
+
 
 "cardtype_americanexpress" = "American Express‏";
 "cardtype_cartaaura" = "Carta Aura‏";

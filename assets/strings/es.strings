@@ -17,6 +17,7 @@
 "ok" = "Aceptar";
 "paypal_logo" = "PayPal";
 "scan_guide" = "Mantén la tarjeta aquí.\nSe escaneará automáticamente.";
+"entry_card_alias" = "Card Alias";
 
 "cardtype_americanexpress" = "American Express";
 "cardtype_cartaaura" = "Carta Aura";
