@@ -114,7 +114,7 @@ static ScanAvailabilityStatus cachedScanAvailabilityStatus = ScanAvailabilityUnk
 #pragma mark - Preload resources for faster launch of card.io
 
 + (void)preloadCardIO {
-  NSString* bundlePath = [[[CardIOBundle sharedInstance] NSBundle] bundlePath];
+  //NSString* bundlePath = [[[CardIOBundle sharedInstance] NSBundle] bundlePath];
   //NSLog(@"ASSETS IN BUNDLE AT : %@", bundlePath);
   //[self listAllResources: bundlePath];
   [CardIOLocalizer preload];
