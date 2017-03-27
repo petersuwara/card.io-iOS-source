@@ -31,6 +31,7 @@
       break;
     case CardIOCreditCardTypeUnionPay:
       result = CardIOLocalizedString(@"cardtype_unionpay", languageOrLocale);   // Union Pay
+      break;
     default:
       result = @"";
       break;
