@@ -1046,7 +1046,7 @@
   BOOL postalCodeIsValid = !self.postalCodeTextField || [CardIOPostalCodeTextFieldDelegate isValidPostalCode:self.cardInfo.postalCode];
   BOOL cardholderNameIsValid = !self.cardholderNameTextField || [CardIOCardholderNameTextFieldDelegate isValidCardholderName:self.cardInfo.cardholderName];
   BOOL cardAliasIsValid = !self.cardAliasTextField || self.cardAliasTextField.text.length > 0; //[CardIOCardAliasTextFieldDelegate isValidCardAlias:self.cardInfo.cardAlias];
-  BOOL isValid = numberIsValid && expiryIsValid && cvvIsValid && postalCodeIsValid && cardholderNameIsValid;
+  BOOL isValid = numberIsValid && expiryIsValid && cvvIsValid && postalCodeIsValid && cardholderNameIsValid && cardAliasIsValid;
   self.navigationItem.rightBarButtonItem.enabled = isValid;
 
   return isValid;
